@@ -9,7 +9,7 @@ environment = []
 num_pass = 20
 passengers = []
 num_iter = 250
-f = open('EnvTest.txt', newline='') 
+f = open('EnvTest2.txt', newline='') 
 #Import existing environment data as csv and create list
 reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
 
@@ -25,7 +25,7 @@ f.close() 	# Don't close until you are done with the reader;
 #Create plot
 fig = pyt.figure(figsize=(7,7))
 pyt.xlim(0, 300)
-pyt.ylim(0, 300)
+pyt.ylim(0, 200)
 ax = fig.add_axes([0,0,1,1])
 
 for i in range(num_pass):
@@ -38,13 +38,14 @@ for j in range(num_iter):
         
         for i in range(num_pass):
             random.shuffle(passengers[i].passengers)
+            passengers[i].judge_queue(environment)
             passengers[i].move()
             
         for i in range(num_pass):
             
             pyt.scatter(passengers[i].x,passengers[i].y, color = 'red')
             pyt.xlim(0,300)
-            pyt.ylim(0,300)
+            pyt.ylim(0,200)
             pyt.imshow(environment)
           
 
