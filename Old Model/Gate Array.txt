@@ -1,0 +1,29 @@
+    def queue_add(self):
+        
+        if 24 < self.x < 33:
+            self.environment[28:32][25:32] += 1
+            return(1)
+        elif 51 < self.x < 60:
+            self.environment[28:32][52:59] += 1
+            return(2)
+        elif 78 < self.x < 87:
+            self.environment[28:32][79:86] += 1
+            return(3)
+        elif 105 < self.x < 114:
+            self.environment[28:32][106:113] += 1
+            return(4)
+        elif 132 < self.x < 141:
+            self.environment[28:32][133:140] += 1
+            return(5)
+        elif 159 < self.x < 168:
+            self.environment[28:32][160:167] += 1
+            return(6)
+        elif 186 < self.x < 195:
+            self.environment[28:32][187:194] += 1
+            return(7)
+        elif 213 < self.x < 222:
+            self.environment[28:32][214:221] += 1
+            return(8)
+        else:
+            self.environment[28:32][241:248] += 1
+            return(9)
